@@ -1,0 +1,92 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+<h:head>
+	<title>DAC</title>
+	<meta charset="utf-8" />
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+	<h:outputStylesheet library="css" name="materialize.css" />
+	<h:outputStylesheet library="css" name="index.css" />
+	<h:outputScript library="js" name="JQuery.js" />
+	<h:outputScript library="js" name="materialize.js" />
+	<h:outputScript library="js" name="init.js" />
+</h:head>
+<h:body>
+	<div id="navbar" class="navbar-fixed scrollspy">
+		<nav class="grey darken-2">
+			<div class="nav-wrapper container">
+				<div>
+					<a href="template.xhtml" class="brand-logo">Logo</a>
+				</div>
+	
+				<a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+				<ul class="right hide-on-med-and-down">
+					<li><a href="listPessoas.xhtml">Pessoas</a></li>
+					<li><a href="aboutUs.html">About Us</a></li>
+					<li><a href="samplePost.html">Sample post</a></li>
+					<li><a href="contactUs.html">Contact Us</a></li>
+				</ul>
+				<ul class="sidenav" id="mobile-demo">
+					<li><a href="listPessoas.xhtml">Pessoas</a></li>
+					<li><a href="aboutUs.html">About Us</a></li>
+					<li><a href="samplePost.html">Sample post</a></li>
+					<li><a href="contactUs.html">Contact Us</a></li>
+	
+				</ul>
+			</div>
+		</nav>
+	</div>
+
+	<div id="index-banner" class="parallax-container valign-wrapper">
+		<div class="section no-pad-bot">
+			<div class="container valign">
+				<br/><br/>
+				<h1 class="header center grey-text text-darken-2">Desenvolvimento
+					de Aplicações Corporativas</h1>
+				<div class="row center">
+					<h5 class="header col s12 light grey-text text-darken-2">Atividade
+						de fixação: Pessoas e Dependentes</h5>
+				</div>
+				<br/><br/>
+			</div>
+		</div>
+		<div class="parallax">
+			<h:graphicImage library="images" name="main.jpg" />
+		</div>
+	</div>
+
+	<!-- CONTEUDO -->
+	<ui:insert name="conteudo">
+		<div class="container" id="startPosts">
+			<br /> <br /> <br /> <br />
+			<div class="row">
+				<ul>
+					<li><h4><b>RF01</b> - Implementar os métodos acessores para as classes Pessoa e Dependente;</h4></li>
+					<li><h4><b>RF02</b> - Implementar a classe PessoasEmMemoria;</h4></li>
+					<li><h4><b>RF03</b> - Adaptar a página edit.xhtml para o arquivo de template templateAula.xhtml;</h4></li>
+					<li><h4><b>RF04</b> - Criar um Conversor para a classe Dependente;</h4></li>
+					<li><h4><b>RF05</b> - Adicionar um selectOneMenu na página edit.xhtml da pasta pessoa. Deve ser possível selecionar um Dependente e associar sua instância ao atributo da classe Pessoa
+					</h4></li>
+					<li><h4><b>RF06</b> - Criar as páginas para edição e listagem da entidade Dependente;</h4></li>
+					<li><h4><b>RF07</b> - Criar um Validador para a classe Dependente. Serão válidos apenas Dependentes que possuem data de nascimento anterior a data atual e o nome não vazio;</h4></li>
+					<li><h4><b>RF08</b> - Atualizar o template para algum outro layout. O ideial seria utilizar alguma biblioteca de componentes como o Materialize, Bootstrap, etc. Contudo, caso prefiram, podem desenvolver sua própria solução;</h4></li>
+					<li><h4><b>RF09</b> - Criar uma página que permita realizar uma busca por CPF;</h4></li>
+					<li><h4><b>RF10</b> - Criar e Implementar a classe PessoasEmJDBC que é uma solução que utiliza a conexão com Banco de Dados.</h4></li>
+				</ul>
+			<hr />
+			</div>
+			</div>
+	</ui:insert>
+	<footer class="page-footer grey darken-2"> <!--conatiner-->
+	<div class="footer-copyright">
+		<div class="container">
+			<p>Desenvolvido por Leanderson Coelho | Ricardo Job</p>
+			<br />
+		</div>
+	</div>
+	</footer>
+</h:body>
+</html>
