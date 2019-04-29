@@ -36,7 +36,7 @@ public class ControladorDePessoas implements Serializable {
         this.pessoa = new Pessoa();
 //        return null; //        return "index.xhtml";
 //        return "list";
-        return "list.xhtml?faces-redirect=true";
+        return "listPessoa.xhtml?faces-redirect=true";
     }
 
     public String atualizar() {

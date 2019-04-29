@@ -15,11 +15,12 @@ public class PessoasEmMemoria implements Pessoas {
 
     public void nova(Pessoa pessoa) {
         //TODO: implementar
+    	pessoas.add(pessoa);
+    	System.out.println(pessoas);
     }
 
     public List<Pessoa> todas() {
-        //TODO: implementar
-        return null;
+        return pessoas;
     }
 
     public void excluir(Pessoa pessoa) {
