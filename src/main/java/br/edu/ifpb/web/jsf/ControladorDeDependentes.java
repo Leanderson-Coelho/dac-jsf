@@ -17,13 +17,27 @@ public class ControladorDeDependentes implements Serializable{
 	private Dependente dependente = new Dependente();
 	
 	public String salvar() {
-		service.novo(dependente);
-		System.out.println(service.todos());
+		if(service.localizarDependenteComId(dependente.getUuid())==null) {
+			service.novo(dependente);
+			dependente = new Dependente();
+		}else {
+			service.atualizar(dependente);
+		}
 		return null;
 	}
 	
 	public List<Dependente> listarDependentes() {
 		return service.todos();
+	}
+	
+	public String excluir(Dependente dependente) {
+		service.excluir(dependente);
+		return null;
+	}
+	
+	public String selecionar(Dependente dependente) {
+		this.dependente = dependente;
+		return null;
 	}
 
 	public Dependente getDependente() {
@@ -33,5 +47,4 @@ public class ControladorDeDependentes implements Serializable{
 	public void setDependente(Dependente dependente) {
 		this.dependente = dependente;
 	}
-	
 }
