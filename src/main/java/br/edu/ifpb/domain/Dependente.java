@@ -1,6 +1,7 @@
 package br.edu.ifpb.domain;
 
 import java.time.LocalDate;
+import java.util.UUID;
 
 /**
  * @author Ricardo Job
@@ -13,11 +14,13 @@ public class Dependente {
     private String nome;
     private LocalDate dataDeNascimento;
 
-    public Dependente() {}
+    public Dependente() {
+    	uuid = UUID.randomUUID().toString();
+    }
 
-    public Dependente(String uuid, String nome, LocalDate dataDeNascimento) {
-		super();
-		this.uuid = uuid;
+    public Dependente(String nome, LocalDate dataDeNascimento) {
+//    	Gera um uuid aleatório
+		uuid = UUID.randomUUID().toString();
 		this.nome = nome;
 		this.dataDeNascimento = dataDeNascimento;
 	}

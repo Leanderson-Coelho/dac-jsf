@@ -14,7 +14,6 @@ public class PessoasEmMemoria implements Pessoas {
     private final List<Pessoa> pessoas = new ArrayList<>();
 
     public void nova(Pessoa pessoa) {
-        //TODO: implementar
     	pessoas.add(pessoa);
     }
 
@@ -27,18 +26,19 @@ public class PessoasEmMemoria implements Pessoas {
     }
 
     public void atualizar(Pessoa pessoa) {
-        //TODO: implementar
+        pessoas.remove(pessoa);
+        pessoas.add(pessoa);
     }
 
     @Override
     public List<Dependente> todosOsDepentendes() {
-        //TODO: implementar
-        return null;
+        //TODO
+    	return null;
     }
 
     @Override
     public Dependente localizarDependenteComId(String uuid) {
         //TODO: implementar
-        return null;
+    	return null;
     }
 }

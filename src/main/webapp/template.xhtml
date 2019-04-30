@@ -24,19 +24,21 @@
 	
 				<a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
 				<ul class="right hide-on-med-and-down">
-					<li><a href="listPessoas.xhtml">Pessoas</a></li>
-					<li><a href="cadastroPessoa.xhtml">Cadastrar Pessoa</a></li>
-					<li><a href="samplePost.html">Sample post</a></li>
+					<li><a class="dropdown-trigger" data-target='pessoasDropDown' href="listPessoas.xhtml">Pessoas</a></li>
+					<li><a href="cadastroDependente.xhtml">Dependentes</a></li>
 					<li><a href="contactUs.html">Contact Us</a></li>
 				</ul>
 				<ul class="sidenav" id="mobile-demo">
-					<li><a href="listPessoas.xhtml">Pessoas</a></li>
-					<li><a href="cadastroPessoa.xhtml">Cadastrar Pessoa</a></li>
+					<li><a href="listPessoas.xhtml">Listar Pessoas</a></li>
+					<li><a href="cadastroDependente.xhtml">Dependentes</a></li>
 					<li><a href="samplePost.html">Sample post</a></li>
 					<li><a href="contactUs.html">Contact Us</a></li>
-	
 				</ul>
-			</div>
+			<ul id='pessoasDropDown' class='dropdown-content grey darken-2'>
+				<li><a class="white-text" href="cadastroPessoa.xhtml">Cadastrar Pessoas</a></li>
+				<li><a class="white-text" href="listPessoas.xhtml">Listar Pessoas</a></li>
+			</ul>
+		</div>
 		</nav>
 	</div>
 
