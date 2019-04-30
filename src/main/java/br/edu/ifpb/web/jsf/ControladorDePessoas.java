@@ -1,14 +1,17 @@
 package br.edu.ifpb.web.jsf;
 
-import br.edu.ifpb.domain.Pessoa;
-import br.edu.ifpb.domain.Pessoas;
-import br.edu.ifpb.infra.memory.PessoasEmMemoria;
 import java.io.Serializable;
 import java.util.List;
 //import javax.faces.bean.RequestScoped;
 
+import javax.annotation.PostConstruct;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
+
+import br.edu.ifpb.domain.CPF;
+import br.edu.ifpb.domain.Pessoa;
+import br.edu.ifpb.domain.Pessoas;
+import br.edu.ifpb.infra.memory.PessoasEmMemoria;
 
 /**
  * @author Ricardo Job
@@ -66,5 +69,4 @@ public class ControladorDePessoas implements Serializable {
     public void setPessoa(Pessoa pessoa) {
         this.pessoa = pessoa;
     }
-
 }

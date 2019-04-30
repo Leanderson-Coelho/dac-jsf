@@ -14,25 +14,16 @@ public class Pessoa {
     private CPF cpf;
     private Dependente dependente;
 
-    public Pessoa() {
-        this(
-            "",
-            "11122233344"
-        );
-    }
+    public Pessoa() {}
+    
+    public Pessoa(String nome, CPF cpf, Dependente dependente) {
+		super();
+		this.nome = nome;
+		this.cpf = cpf;
+		this.dependente = dependente;
+	}
 
-    public Pessoa(String nome,String cpf) {
-        this(
-            nome,new CPF(cpf)
-        );
-    }
-
-    public Pessoa(String nome,CPF cpf) {
-        this.cpf = cpf;
-        this.nome = nome;
-    }
-
-    public CPF getCpf() {
+	public CPF getCpf() {
         return cpf;
     }
 
@@ -48,12 +39,20 @@ public class Pessoa {
         this.nome = nome;
     }
 
-    @Override
-    public String toString() {
-        return "{ 'cpf':'" + cpf + "', 'nome': '" + nome + "'}";
-    }
+    public Dependente getDependente() {
+		return dependente;
+	}
 
-    @Override
+	public void setDependente(Dependente dependente) {
+		this.dependente = dependente;
+	}
+
+	@Override
+	public String toString() {
+		return "Pessoa [id=" + id + ", nome=" + nome + ", cpf=" + cpf + ", dependente=" + dependente + "]";
+	}
+
+	@Override
     public int hashCode() {
         int hash = 7;
         hash = 17 * hash + Objects.hashCode(this.cpf);

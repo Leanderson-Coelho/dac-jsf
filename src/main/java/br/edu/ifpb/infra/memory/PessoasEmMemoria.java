@@ -16,7 +16,6 @@ public class PessoasEmMemoria implements Pessoas {
     public void nova(Pessoa pessoa) {
         //TODO: implementar
     	pessoas.add(pessoa);
-    	System.out.println(pessoas);
     }
 
     public List<Pessoa> todas() {
@@ -24,7 +23,7 @@ public class PessoasEmMemoria implements Pessoas {
     }
 
     public void excluir(Pessoa pessoa) {
-        //TODO: implementar
+        pessoas.remove(pessoa);
     }
 
     public void atualizar(Pessoa pessoa) {

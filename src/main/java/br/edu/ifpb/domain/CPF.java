@@ -36,4 +36,9 @@ public class CPF {
         this.numero = "";
     }
 
+	@Override
+	public String toString() {
+		return "CPF [numero=" + numero + "]";
+	}
+
 }
