@@ -26,6 +26,11 @@
 							<h:inputText id="cpf" value="#{controladorDePessoas.pessoa.cpf}"
 								converter="convert.cpf" />
 						</div>
+						<div class="input-field">
+							<h:selectOneMenu value="#{controladorDePessoas.pessoa.dependente}" converter="convert.dependente" >
+								<f:selectItems value="#{controladorDeDependentes.listarDependentes()}" var="dep" itemValue="#{dep}" itemLabel="#{dep.nome}" />
+							</h:selectOneMenu>
+						</div>
 						<h:commandButton value="Cadastrar"
 							action="#{controladorDePessoas.salvar}"
 							class="btn waves-effect waves-teal right" />

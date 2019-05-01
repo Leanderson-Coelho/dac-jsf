@@ -16,15 +16,16 @@
 			<div class="row">
 				<div class="col s12 l4 offset-l4">
 					<h:form>
+						<h:messages layout="table" class="red-text"></h:messages>
 						<div class="input-field">
 							<h:outputLabel for="nome">Nome:</h:outputLabel>
 							<h:inputText id="nome"
-								value="#{controladorDeDependentes.dependente.nome}" />
+								value="#{controladorDeDependentes.dependente.nome}" validator="validator.nome" />
 						</div>
 						<div class="input-field">
 							<h:outputLabel for="nasc">Data de Nascimento:</h:outputLabel>
 							<h:inputText id="nasc"
-								value="#{controladorDeDependentes.dependente.dataDeNascimento}">
+								value="#{controladorDeDependentes.dependente.dataDeNascimento}" validator="validator.data">
 								<f:convertDateTime type="localDate" pattern="dd/MM/yyyy" />
 							</h:inputText>
 						</div>

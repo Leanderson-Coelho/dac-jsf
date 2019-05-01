@@ -22,6 +22,7 @@ public class ControladorDeDependentes implements Serializable{
 			dependente = new Dependente();
 		}else {
 			service.atualizar(dependente);
+			dependente = new Dependente();
 		}
 		return null;
 	}
