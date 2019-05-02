@@ -20,6 +20,20 @@ public class PessoasEmMemoria implements Pessoas {
     public List<Pessoa> todas() {
         return pessoas;
     }
+    
+	@Override
+	public List<Pessoa> buscarPorCPF(String cpf) {
+		List<Pessoa> resultadoBusca = new ArrayList<>();
+		for(Pessoa p: pessoas) {
+//			faz um substring em todos os cpf cadastrados para deixar do mesmo tamanho
+//			que o usuário digitou, e compara para ver se é igual;
+			String comparar = p.getCpf().valor().substring(0, cpf.length());
+			if(comparar.equals(cpf)) {
+				resultadoBusca.add(p);
+			}
+		}
+		return resultadoBusca;
+	}
 
     public void excluir(Pessoa pessoa) {
         pessoas.remove(pessoa);
@@ -41,4 +55,5 @@ public class PessoasEmMemoria implements Pessoas {
         //TODO: implementar
     	return null;
     }
+
 }

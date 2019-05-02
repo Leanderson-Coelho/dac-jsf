@@ -13,6 +13,8 @@ public interface Pessoas extends Serializable {
     public void nova(Pessoa pessoa);
 
     public List<Pessoa> todas() ;
+    
+    public List<Pessoa> buscarPorCPF(String cpf);
 
     public void excluir(Pessoa pessoa);
 
