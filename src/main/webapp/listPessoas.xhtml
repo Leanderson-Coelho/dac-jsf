@@ -15,6 +15,21 @@
 					<h:form prependId="false">
 						<ul class="collection with-header">
 							<li class="collection-header"><h4>Pessoas Cadastradas</h4></li>
+							<li class="collection-item">
+								<div class="row">
+									<div class="col l4">
+										<b>NOME</b>
+									</div>
+									<div class="col l3">
+										<b>CPF</b>
+									</div>
+									<div class="col l3">
+										<b>DEPENDENTE</b>
+									</div>
+									<div class="col"></div>
+									<div class="col"></div>
+								</div>
+							</li>
 							<ui:repeat var="pessoa"
 								value="#{controladorDePessoas.getTodasAsPessoas()}">
 								<li class="collection-item">
@@ -22,8 +37,11 @@
 										<div class="col l4">
 											<h:outputText value="#{pessoa.nome}"></h:outputText>
 										</div>
-										<div class="col l4">
+										<div class="col l3">
 											<h:outputText value="#{pessoa.cpf.formatado()}"></h:outputText>
+										</div>
+										<div class="col l3">
+											<h:outputText value="#{pessoa.dependente.nome}"></h:outputText>
 										</div>
 										<div class="col">
 											<h:commandButton class="btn waves-effect waves-teal"
@@ -31,7 +49,8 @@
 										</div>
 										<div class="col">
 											<h:commandButton class="btn waves-effect waves-teal"
-												value="Editar" action="#{controladorDePessoas.editar(pessoa)}" />
+												value="Editar"
+												action="#{controladorDePessoas.editar(pessoa)}" />
 										</div>
 									</div>
 								</li>
