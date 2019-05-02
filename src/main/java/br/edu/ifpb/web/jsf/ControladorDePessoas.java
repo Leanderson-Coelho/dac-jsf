@@ -1,14 +1,13 @@
 package br.edu.ifpb.web.jsf;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 //import javax.faces.bean.RequestScoped;
 
-import javax.annotation.PostConstruct;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
 
-import br.edu.ifpb.domain.CPF;
 import br.edu.ifpb.domain.Pessoa;
 import br.edu.ifpb.domain.Pessoas;
 import br.edu.ifpb.infra.memory.PessoasEmMemoria;
@@ -29,6 +28,12 @@ public class ControladorDePessoas implements Serializable {
 
 //    @Inject
     private Pessoas service = new PessoasEmMemoria();
+    
+//    valor informado para a busca por cpf
+    private String valorBusca = new String();
+    
+//    Guarda as pessoas que tem o cpf informado na busca
+    private List<Pessoa> resultadoBuscaPorCPF = new ArrayList<>();
 
     //actionListeners
 //    public void exemplo(ActionEvent ev) {
@@ -61,6 +66,11 @@ public class ControladorDePessoas implements Serializable {
     public List<Pessoa> getTodasAsPessoas() {
         return this.service.todas();
     }
+    
+    public void buscaCPF() {
+    	resultadoBuscaPorCPF = service.buscarPorCPF(valorBusca);
+    	valorBusca = "";
+    }
 
     public Pessoa getPessoa() {
         return pessoa;
@@ -69,4 +79,20 @@ public class ControladorDePessoas implements Serializable {
     public void setPessoa(Pessoa pessoa) {
         this.pessoa = pessoa;
     }
+
+	public String getValorBusca() {
+		return valorBusca;
+	}
+
+	public void setValorBusca(String valorBusca) {
+		this.valorBusca = valorBusca;
+	}
+
+	public List<Pessoa> getResultadoBuscaPorCPF() {
+		return resultadoBuscaPorCPF;
+	}
+
+	public void setResultadoBuscaPorCPF(List<Pessoa> resultadoBuscaPorCPF) {
+		this.resultadoBuscaPorCPF = resultadoBuscaPorCPF;
+	}
 }

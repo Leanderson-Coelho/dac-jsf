@@ -14,9 +14,7 @@ public class DependenteConvert implements Converter{
 
 	@Override
 	public Object getAsObject(FacesContext context, UIComponent component, String value) {
-		Dependente dep = new Dependente(value,LocalDate.now());
-		System.out.println(dep);
-		
+		Dependente dep = new Dependente(value,LocalDate.now());	
 		return null;
 	}
 
