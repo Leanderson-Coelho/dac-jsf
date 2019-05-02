@@ -20,12 +20,14 @@
 						<div class="input-field">
 							<h:outputLabel for="nome">Nome:</h:outputLabel>
 							<h:inputText id="nome"
-								value="#{controladorDeDependentes.dependente.nome}" validator="validator.nome" />
+								value="#{controladorDeDependentes.dependente.nome}"
+								validator="validator.nome" />
 						</div>
 						<div class="input-field">
 							<h:outputLabel for="nasc">Data de Nascimento:</h:outputLabel>
 							<h:inputText id="nasc"
-								value="#{controladorDeDependentes.dependente.dataDeNascimento}" validator="validator.data">
+								value="#{controladorDeDependentes.dependente.dataDeNascimento}"
+								validator="validator.data">
 								<f:convertDateTime type="localDate" pattern="dd/MM/yyyy" />
 							</h:inputText>
 						</div>
@@ -36,37 +38,52 @@
 				</div>
 			</div>
 			<div class="row">
-				<h:form prependId="false">
-					<ul class="collection with-header">
-						<li class="collection-header"><h4>Dependentes
-								Cadastradas</h4></li>
-						<ui:repeat var="dependente"
-							value="#{controladorDeDependentes.listarDependentes()}">
+				<div class="col s12 l8 offset-l2">
+					<h:form prependId="false">
+						<ul class="collection with-header">
+							<li class="collection-header"><h4>Dependentes
+									Cadastradas</h4></li>
 							<li class="collection-item">
 								<div class="row">
 									<div class="col l3">
-										<h:outputText value="#{dependente.nome}"></h:outputText>
+										<b>NOME</b>
 									</div>
 									<div class="col l7">
-										<h:outputText value="#{dependente.dataDeNascimento}">
-											<f:convertDateTime type="localDate" pattern="dd/MM/yyyy" />
-										</h:outputText>
+										<b>DATA DE NASCIMENTO</b>
 									</div>
-									<div class="col">
-										<h:commandButton class="btn waves-effect waves-teal" value="x"
-											action="#{controladorDeDependentes.excluir(dependente)}" />
-									</div>
-									<div class="col">
-										<h:commandButton class="btn waves-effect waves-teal"
-											value="Editar"
-											action="#{controladorDeDependentes.selecionar(dependente)}">
-										</h:commandButton>
-									</div>
+									<div class="col"></div>
+									<div class="col"></div>
 								</div>
 							</li>
-						</ui:repeat>
-					</ul>
-				</h:form>
+							<ui:repeat var="dependente"
+								value="#{controladorDeDependentes.listarDependentes()}">
+								<li class="collection-item">
+									<div class="row">
+										<div class="col l3">
+											<h:outputText value="#{dependente.nome}"></h:outputText>
+										</div>
+										<div class="col l7">
+											<h:outputText value="#{dependente.dataDeNascimento}">
+												<f:convertDateTime type="localDate" pattern="dd/MM/yyyy" />
+											</h:outputText>
+										</div>
+										<div class="col">
+											<h:commandButton class="btn waves-effect waves-teal"
+												value="x"
+												action="#{controladorDeDependentes.excluir(dependente)}" />
+										</div>
+										<div class="col">
+											<h:commandButton class="btn waves-effect waves-teal"
+												value="Editar"
+												action="#{controladorDeDependentes.selecionar(dependente)}">
+											</h:commandButton>
+										</div>
+									</div>
+								</li>
+							</ui:repeat>
+						</ul>
+					</h:form>
+				</div>
 			</div>
 		</ui:define>
 	</ui:composition>
