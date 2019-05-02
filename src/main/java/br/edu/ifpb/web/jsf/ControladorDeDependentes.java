@@ -12,7 +12,7 @@ import br.edu.ifpb.infra.memory.DependentesEmMemoria;
 @SessionScoped
 @Named
 public class ControladorDeDependentes implements Serializable{
-	private DependentesEmMemoria service = new DependentesEmMemoria();
+	private DependentesEmMemoria service = DependentesEmMemoria.getInstance();
 	
 	private Dependente dependente = new Dependente();
 	

@@ -27,7 +27,7 @@ public class ControladorDePessoas implements Serializable {
     private Pessoa pessoa = new Pessoa();
 
 //    @Inject
-    private Pessoas service = new PessoasEmMemoria();
+    private Pessoas service = PessoasEmMemoria.getInstance();
     
 //    valor informado para a busca por cpf
     private String valorBusca = new String();
@@ -41,14 +41,14 @@ public class ControladorDePessoas implements Serializable {
 //    }
     public String salvar() {
 //    	verifica se o cpf não foi cadastrado e nesse caso o cadastra
-    	if(service.buscarPorCPF(pessoa.getCpf().valor())==null) {
+    	if(service.buscarPorCPF(pessoa.getCpf().valor()).isEmpty()) {
     		this.service.nova(pessoa);
             this.pessoa = new Pessoa();
     	}else {
 //    		atualiza o cadastro caso o cpf já exista
     		atualizar();
     	}
-        return "listPessoa.xhtml?faces-redirect=true";
+        return "listPessoas.xhtml?faces-redirect=true";
     }
 
     public String atualizar() {
