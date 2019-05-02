@@ -27,7 +27,7 @@
 								converter="convert.cpf" />
 						</div>
 						<div class="input-field">
-							<h:selectOneMenu value="#{controladorDePessoas.pessoa.dependente}" converter="convert.dependente" >
+							<h:selectOneMenu value="#{controladorDePessoas.pessoa.dependente}" converter="convert.dependente">
 								<f:selectItems value="#{controladorDeDependentes.listarDependentes()}" var="dep" itemValue="#{dep}" itemLabel="#{dep.nome}" />
 							</h:selectOneMenu>
 						</div>

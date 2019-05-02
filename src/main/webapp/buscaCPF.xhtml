@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+<h:head>
+	<title>Buscar pessoa</title>
+</h:head>
+<h:body>
+	<ui:composition template="template.xhtml">
+		<ui:define name="conteudo">
+			<div class="row">
+				<div class="col l4 offset-l4">
+					<h:form>
+						<div class="input-field col l8">
+							<h:outputLabel for="valorBusca">CPF</h:outputLabel>
+							<h:inputText id="valorBusca"
+								value="#{controladorDePessoas.valorBusca}" />
+						</div>
+						<div class="input-field col l4">
+							<h:commandButton class="btn waves-effect waves-teal"
+								value="Pesquisar" action="#{controladorDePessoas.buscaCPF()}" />
+						</div>
+					</h:form>
+				</div>
+			</div>
+			<ul class="collection with-header">
+				<li class="collection-header"><h4>Resultados</h4></li>
+				<ui:repeat var="pessoa"
+					value="#{controladorDePessoas.resultadoBuscaPorCPF}">
+					<li class="collection-item">
+						<div class="row">
+							<div class="col l4">
+								<h:outputText value="#{pessoa.nome}"></h:outputText>
+							</div>
+							<div class="col l4">
+								<h:outputText value="#{pessoa.cpf.formatado()}"></h:outputText>
+							</div>
+						</div>
+					</li>
+				</ui:repeat>
+			</ul>
+		</ui:define>
+	</ui:composition>
+</h:body>
+</html>
+
