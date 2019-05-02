@@ -9,6 +9,19 @@ public class DependentesEmMemoria implements br.edu.ifpb.domain.Dependentes {
 	
 	private final List<Dependente> dependentes = new ArrayList<>();
 	
+	private static DependentesEmMemoria instance = null;
+	
+	public static DependentesEmMemoria getInstance() {
+		if(instance == null) {
+			synchronized (DependentesEmMemoria.class) {
+				if(instance == null) {
+					instance = new DependentesEmMemoria();
+				}
+			}
+		}
+		return instance;
+	}
+	
 	@Override
 	public void novo(Dependente dependente) {
 		dependentes.add(dependente);
