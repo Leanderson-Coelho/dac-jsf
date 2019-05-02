@@ -40,10 +40,14 @@ public class ControladorDePessoas implements Serializable {
 //        
 //    }
     public String salvar() {
-        this.service.nova(pessoa);
-        this.pessoa = new Pessoa();
-//        return null; //        return "index.xhtml";
-//        return "list";
+//    	verifica se o cpf não foi cadastrado e nesse caso o cadastra
+    	if(service.buscarPorCPF(pessoa.getCpf().valor())==null) {
+    		this.service.nova(pessoa);
+            this.pessoa = new Pessoa();
+    	}else {
+//    		atualiza o cadastro caso o cpf já exista
+    		atualizar();
+    	}
         return "listPessoa.xhtml?faces-redirect=true";
     }
 
@@ -60,7 +64,7 @@ public class ControladorDePessoas implements Serializable {
 
     public String editar(Pessoa pessoa) {
         this.pessoa = pessoa;
-        return null;
+        return "cadastroPessoa?faces-redirect=true";
     }
 
     public List<Pessoa> getTodasAsPessoas() {

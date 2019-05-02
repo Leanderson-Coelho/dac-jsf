@@ -25,9 +25,13 @@
 										<div class="col l4">
 											<h:outputText value="#{pessoa.cpf.formatado()}"></h:outputText>
 										</div>
-										<div class="col l4">
+										<div class="col">
 											<h:commandButton class="btn waves-effect waves-teal"
 												value="x" action="#{controladorDePessoas.excluir(pessoa)}" />
+										</div>
+										<div class="col">
+											<h:commandButton class="btn waves-effect waves-teal"
+												value="Editar" action="#{controladorDePessoas.editar(pessoa)}" />
 										</div>
 									</div>
 								</li>
