@@ -4,15 +4,20 @@ import java.io.Serializable;
 import java.util.List;
 
 import javax.enterprise.context.SessionScoped;
+import javax.inject.Inject;
 import javax.inject.Named;
 
 import br.edu.ifpb.domain.Dependente;
+import br.edu.ifpb.domain.Dependentes;
+import br.edu.ifpb.domain.Pessoas;
 import br.edu.ifpb.infra.memory.DependentesEmMemoria;
 
 @SessionScoped
 @Named
 public class ControladorDeDependentes implements Serializable{
-	private DependentesEmMemoria service = DependentesEmMemoria.getInstance();
+
+	@Inject
+	private Dependentes service;
 	
 	private Dependente dependente = new Dependente();
 	

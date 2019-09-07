@@ -1,13 +1,15 @@
 package br.edu.ifpb.domain.jdbc;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Properties;
 
-import org.omg.CORBA.portable.InputStream;
-
+/**
+ * @deprecated Porque é ruim
+ */
 public class ConnectionFactory {
 	//fonte: https://github.com/Projeto1-PW1/Leriado/blob/master/leriadoApp/src/main/java/com/ifpb/edu/model/jdbc/ConnectionFactory.java
 	//REUSO DO CÓDIGO DO PROJETO DE PW1 QUE PARTICIPEI PARA CONEXÃO COM BANCO
@@ -34,7 +36,7 @@ public class ConnectionFactory {
 	
 	static {
 		Properties properties = new Properties();
-		InputStream inputStream = (InputStream) Thread.currentThread().getContextClassLoader().getResourceAsStream("config.properties");
+		InputStream inputStream = Thread.currentThread().getContextClassLoader().getResourceAsStream("config.properties");
 		try {
 			properties.load(inputStream);
 			inputStream.close();

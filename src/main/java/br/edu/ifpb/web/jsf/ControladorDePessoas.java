@@ -6,6 +6,7 @@ import java.util.List;
 //import javax.faces.bean.RequestScoped;
 
 import javax.enterprise.context.SessionScoped;
+import javax.inject.Inject;
 import javax.inject.Named;
 
 import br.edu.ifpb.domain.Pessoa;
@@ -26,12 +27,12 @@ public class ControladorDePessoas implements Serializable {
 
     private Pessoa pessoa = new Pessoa();
 
-//    @Inject
-    private Pessoas service = PessoasEmMemoria.getInstance();
-    
+    @Inject
+    private Pessoas service;
+
 //    valor informado para a busca por cpf
     private String valorBusca = new String();
-    
+
 //    Guarda as pessoas que tem o cpf informado na busca
     private List<Pessoa> resultadoBuscaPorCPF = new ArrayList<>();
 
@@ -70,7 +71,7 @@ public class ControladorDePessoas implements Serializable {
     public List<Pessoa> getTodasAsPessoas() {
         return this.service.todas();
     }
-    
+
     public void buscaCPF() {
     	resultadoBuscaPorCPF = service.buscarPorCPF(valorBusca);
     	valorBusca = "";

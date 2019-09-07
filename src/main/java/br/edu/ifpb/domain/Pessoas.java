@@ -20,7 +20,4 @@ public interface Pessoas extends Serializable {
 
     public void atualizar(Pessoa pessoa);
     
-    public List<Dependente> todosOsDepentendes();
-
-    public Dependente localizarDependenteComId(String uuid);
 }

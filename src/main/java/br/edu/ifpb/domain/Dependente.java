@@ -24,6 +24,12 @@ public class Dependente {
 		this.nome = nome;
 		this.dataDeNascimento = dataDeNascimento;
 	}
+
+	public Dependente(String uuid, String nome, LocalDate dataDeNascimento) {
+    	this.uuid = uuid;
+		this.nome = nome;
+		this.dataDeNascimento = dataDeNascimento;
+	}
     
 	public String getUuid() {
         return uuid;

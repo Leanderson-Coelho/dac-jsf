@@ -57,16 +57,4 @@ public class PessoasEmMemoria implements Pessoas {
 		pessoas.add(pessoa);
 	}
 
-	@Override
-	public List<Dependente> todosOsDepentendes() {
-		// TODO
-		return null;
-	}
-
-	@Override
-	public Dependente localizarDependenteComId(String uuid) {
-		// TODO: implementar
-		return null;
-	}
-
 }

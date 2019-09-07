@@ -7,7 +7,7 @@
     <version>0.1-SNAPSHOT</version>
     <packaging>war</packaging>
 
-    <name>dac-jsf</name>
+    <name>app</name>
 
     <properties>
         <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
@@ -30,6 +30,7 @@
     </dependencies>
 
     <build>
+        <finalName>dac-jsf</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

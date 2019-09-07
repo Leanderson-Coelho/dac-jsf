@@ -1,3 +1,14 @@
+# Uso:
+
+## Primeiro acesso:
+* Use `./FirstTime.sh` para construir o `.war` da aplicação; Criar os containers e iniciar em `localhost:8080/dac-jsf/template.xhtml`.
+## Parando:
+* Use `./Stop.sh` para parar a aplicação com o docker-compose.
+## Reiniciando:
+* Use `./Start.sh` para reiniciar a aplicação com docker-compose.
+## Obs.:
+* No sistema não é permitido a exclusão de um dependente caso ele esteja associado a uma pessoa.
+
 # JSF
 
 Este projeto está estruturado com os assuntos relacionados ao JSF.
